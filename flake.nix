@@ -1,29 +1,24 @@
 {
-  description = "Dev environment";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
-
   outputs =
-    { self, nixpkgs }:
+    { nixpkgs, ... }:
     let
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-darwin"
-      ];
-
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
-      nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
+      forAllSystems =
+        function:
+        nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+          system: function nixpkgs.legacyPackages.${system}
+        );
     in
     {
-      devShells = forAllSystems (system: {
-        default = nixpkgsFor.${system}.mkShell {
-          packages = with nixpkgsFor.${system}; [
+      formatter = forAllSystems (pkgs: pkgs.alejandra);
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
             bun
-            nodejs
             biome
+            nodejs
             wrangler
             typescript-go
           ];
