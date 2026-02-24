@@ -1,21 +1,23 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs =
-    { nixpkgs, ... }:
-    let
-      forAllSystems =
-        function:
-        nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
-          system: function nixpkgs.legacyPackages.${system}
-        );
-    in
-    {
-      formatter = forAllSystems (pkgs: pkgs.alejandra);
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
+
+  outputs = {
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in {
+        formatter = pkgs.alejandra;
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
             bun
             biome
             nodejs
@@ -23,6 +25,6 @@
             typescript-go
           ];
         };
-      });
-    };
+      }
+    );
 }
