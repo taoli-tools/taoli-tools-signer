@@ -46,7 +46,7 @@ const allowlist = new Set([
   'ComputeBudget111111111111111111111111111111',
   'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL',
 
-  // https://web3.okx.com/zh-hans/build/dev-docs/dex-api/dex-smart-contract
+  // https://web3.okx.com/onchainos/dev-docs/trade/dex-smart-contract
   'proVF4pMXVaYqmy4NjniPh4pqKNfMmsihgd4wdkCX3u',
 
   // https://dev.jup.ag/get-started/index#programs
