@@ -121,7 +121,7 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     '0x5cb43Bae4f36E2f9f858232B4Dce0dbE27bb85e3': new Set([bsc.id]),
     '0x9736d9a45115E33411390EbD54e5A5C3A6E25aA6': new Set([arbitrum.id]),
 
-    // https://web3.okx.com/onchainos/dev-docs/trade/dex-smart-contract##token-approval
+    // https://web3.okx.com/onchainos/dev-docs/trade/dex-smart-contract#token-approval
     '0x40aA958dd87FC8305b97f2BA922CDdCa374bcD7f': new Set([ethereum.id, avalanche.id]),
     '0xd321ab5589d3e8fa5df985ccfef625022e2dd910': new Set([sonic.id]),
     '0xc67879F4065d3B9fe1C09EE990B891Aa8E3a4c2f': new Set([zksync.id]),
