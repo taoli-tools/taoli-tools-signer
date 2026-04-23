@@ -93,30 +93,29 @@ export const EVM: Platform<Address> = async (mnemonic, passphrase) => {
 
 const allowlist: Record<Address, Set<number>> = mapKeys(
   {
-    // https://web3.okx.com/build/dev-docs/dex-api/dex-smart-contract#dex-router
-    '0x5E1f62Dac767b0491e3CE72469C217365D5B48cC': new Set([ethereum.id]),
-    '0x86F752f1F662f39BFbcBeF95EE56B6C20d178969': new Set([sonic.id]),
-    '0x3163Ed233a3Cb5E6B7F10A6f02b01F15867a8779': new Set([zksync.id]),
-    '0x6733Eb2E75B1625F1Fe5f18aD2cB2BaBDA510d19': new Set([optimism.id, scroll.id]),
-    '0x057cfd839aa88994d1a8a8c6d336cf21550f05ef': new Set([polygon.id]),
-    '0x3156020dfF8D99af1dDC523ebDfb1ad2018554a0': new Set([bsc.id]),
-    '0x8aDFb0D24cdb09c6eB6b001A41820eCe98831B91': new Set([avalanche.id]),
-    '0xcF76984119C7f6ae56fAfE680d39C08278b7eCF4': new Set([fantom.id, cronos.id]),
-    '0x368E01160C2244B0363a35B3fF0A971E44a89284': new Set([arbitrum.id]),
-    '0x9EaBF1D34819D9eC9Fe5fd3Db4e9DCD12Fa05284': new Set([linea.id]),
-    '0x23e2f2fa1967faffde2e05fdecbb3fa787a5d3e5': new Set([confluxESpace.id, unichain.id]),
-    '0x4409921ae43a39a11d90f7b7f96cfd0b8093d9fc': new Set([base.id]),
-    '0xF5402CCC5fC3181B45D7571512999D3Eea0257B6': new Set([mantle.id]),
-    '0x8feB9E84b7E9DC86adc6cD6Eb554C5B4355c8405': new Set([manta.id, zetachain.id]),
-    '0xDd5E9B947c99Aa60bab00ca4631Dce63b49983E7': new Set([metis.id]),
-    '0xc9da86c392101047188bae98ccc192271a136a13': new Set([blast.id]),
-    '0x79f7C6C6dc16Ed3154E85A8ef9c1Ef31CEFaEB19': new Set([polygonZkEvm.id]),
-    '0xd3b3e6433d6a7f94c28ce907311fb21b0f0b659e': new Set([merlin.id]),
-    '0x0efa3a01eb0708f9e40b661c6cd7c56c83b9f45a': new Set([xLayer.id]),
-    '0x5c1c902e7e04de98b49acd3de68e12bee2d7908d': new Set([plasma.id]),
-    '0x6088d94C5a40CEcd3ae2D4e0710cA687b91c61d0': new Set([monad.id]),
+    // https://web3.okx.com/zh-hans/onchainos/dev-docs/trade/dex-smart-contract#dex-router
+    '0x28b1Dc1a5E3699A428BC51d234DFab7C9CB2a183': new Set([ethereum.id]),
+    '0x79f7C6C6dc16Ed3154E85A8ef9c1Ef31CEFaEB19': new Set([sonic.id]),
+    '0x6f7c20464258c732577c87a9B467619e03e5C158': new Set([zksync.id, polygonZkEvm.id, merlin.id]),
+    '0xDd5E9B947c99Aa60bab00ca4631Dce63b49983E7': new Set([optimism.id]),
+    '0xF6E1B4b201e220FC3741bd7a75675ffEA25c02AD': new Set([polygon.id]),
+    '0x62cceF0b4545166f721cAa9fEe13c1d3767E27dc': new Set([bsc.id]),
+    '0xa94Fcf9fc56a864f8DE51e6315aee5863AD63C91': new Set([avalanche.id]),
+    '0x25e7f77F33206d311A0130D4b5B881E5Db1181b1': new Set([fantom.id, cronos.id, metis.id]),
+    '0x7CF6b330b437E9fb432B1400DE17B03357Cf049A': new Set([arbitrum.id]),
+    '0x2E1Dee213BA8d7af0934C49a23187BabEACa8764': new Set([linea.id]),
+    '0x95418635f012fFd10eAFcDaF4137e90371f06917': new Set([confluxESpace.id]),
+    '0xC8F6b8Ba0DC0f175B568B99440B0867F69A29265': new Set([base.id]),
+    '0xcF76984119C7f6ae56fAfE680d39C08278b7eCF4': new Set([mantle.id, blast.id]),
+    '0x5e2F47bD7D4B357fCfd0Bb224Eb665773B1B9801': new Set([scroll.id]),
+    '0x69C236E021F5775B0D0328ded5EaC708E3B869DF': new Set([manta.id]),
+    '0xF5402CCC5fC3181B45D7571512999D3Eea0257B6': new Set([zetachain.id]),
+    '0x6733Eb2E75B1625F1Fe5f18aD2cB2BaBDA510d19': new Set([unichain.id]),
+    '0xbec6d0E341102732e4FD62EC50E2F0a9D1bd1D33': new Set([xLayer.id]),
+    '0x19D345f95A80cc136d898f41b490E023cFF78658': new Set([plasma.id]),
+    '0x7A7AD9aa93cd0A2D0255326E5Fb145CEc14997FF': new Set([monad.id]),
 
-    // https://web3.okx.com/build/dev-docs/dex-api/dex-smart-contract#dex-router
+    // https://web3.okx.com/zh-hans/onchainos/dev-docs/trade/dex-smart-contract#dex-router
     // DEX Router Addresses for OKX DEX used in signing exactOut transactions
     '0xa875Fb2204cE71679BE054d97f7fAFFeb6536D67': new Set([ethereum.id]),
     '0x77449Ff075C0A385796Da0762BCB46fd5cc884c6': new Set([base.id]),
