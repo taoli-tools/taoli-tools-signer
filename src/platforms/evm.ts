@@ -184,6 +184,7 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     '0x88de50B233052e4Fb783d4F6db78Cc34fEa3e9FC': new Set([avalanche.id]),
     '0x2d8879046f1559E53eb052E949e9544bCB72f414': new Set([linea.id]),
     '0xbFe03C9E20a9Fc0b37de01A172F207004935E0b1': new Set([scroll.id]),
+    '0x6409722F3a1C4486A3b1FE566cBDd5e9D946A1f3': new Set([unichain.id]),
 
     // https://docs.uniswap.org/contracts/v2/reference/smart-contracts/v2-deployments
     '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D': new Set([ethereum.id]),
@@ -199,8 +200,10 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     '0xBB66Eb1c5e875933D44DAe661dbD80e5D9B03035': new Set([blast.id]),
     '0xa00F34A632630EFd15223B1968358bA4845bEEC7': new Set([zora.id]),
     '0x541aB7c31A119441eF3575F6973277DE0eF460bd': new Set([worldchain.id]),
+    '0x4b2ab38dbf28d31d467aa8993f6c2585981d6804': new Set([monad.id]),
+    '0x182a927119d56008d921126764bf884221b10f59': new Set([xLayer.id]),
 
-    // https://docs.uniswap.org/contracts/v3/reference/deployments/
+    // https://developers.uniswap.org/docs/protocols/v3/deployments
     '0xbb00FF08d01D300023C629E8fFfFcb65A5a578cE': new Set([avalanche.id]),
     '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45': new Set([
       arbitrum.id,
@@ -289,7 +292,7 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     ]),
     '0x686FD50007EaA636F01154d660b96110B6bFe351': new Set([zksync.id]),
 
-    // https://github.com/aerodrome-finance/contracts
+    // https://github.com/aerodrome-finance/contracts#deployment-1
     '0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43': new Set([base.id]),
   },
   (key) => getAddress(key),
