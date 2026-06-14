@@ -90,7 +90,7 @@ Two deployment methods, choose one on your own.
    ```bash
    docker pull ghcr.io/taoli-tools/taoli-tools-signer:latest
    docker service rm taoli-tools-signer
-   docker service create --name=taoli-tools-signer --secret=KEYCHAIN --secret=CERT.pem --secret=KEY.pem -p=443:443 --network nonet ghcr.io/aliez-ren/taoli-tools-signer:latest
+   docker service create --name=taoli-tools-signer --secret=KEYCHAIN --secret=CERT.pem --secret=KEY.pem -p=443:443 --network nonet ghcr.io/taoli-tools/taoli-tools-signer:latest
    docker service logs -f taoli-tools-signer
    ```
 
@@ -98,4 +98,4 @@ Two deployment methods, choose one on your own.
 
 ## Work with Taoli Tools
 
-See [Taoli Tools Document](https://renzholy.notion.site/Taoli-Tools-Signer-20f64b000c2580eda7f2f6fbb357da94)
+See [Taoli Tools Document](https://docs.taoli.tools/)
