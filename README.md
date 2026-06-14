@@ -88,7 +88,7 @@ Two deployment methods, choose one on your own.
 
 8. Pull docker image and run.
    ```bash
-   docker pull ghcr.io/aliez-ren/taoli-tools-signer:latest
+   docker pull ghcr.io/taoli-tools/taoli-tools-signer:latest
    docker service rm taoli-tools-signer
    docker service create --name=taoli-tools-signer --secret=KEYCHAIN --secret=CERT.pem --secret=KEY.pem -p=443:443 --network nonet ghcr.io/aliez-ren/taoli-tools-signer:latest
    docker service logs -f taoli-tools-signer
