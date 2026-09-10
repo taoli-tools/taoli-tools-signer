@@ -16,7 +16,7 @@
     "memoize": "10.2.0",
     "micro-key-producer": "0.8.2",
     "remeda": "2.32.0",
-    "smol-toml": "1.6.1",
+    "smol-toml": "1.7.1",
     "viem": "2.55.19",
     "zod": "4.1.12"
   },
