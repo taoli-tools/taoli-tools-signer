@@ -58,6 +58,7 @@ import { TTSError } from '../error'
 import type { Platform } from '../type'
 
 const pharos = { id: 1672 }
+const elysium = { id: 99901 }
 
 export const EVM: Platform<Address> = async (mnemonic, passphrase) => {
   const seed = await mnemonicToSeed(mnemonic, passphrase)
@@ -130,6 +131,7 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     '0xb193874f0c77948d2bcfec2efaf8bc65b4c2ca89': new Set([hyperEvm.id]),
     '0x6e2a35a7ad683cf634d91492d73bb7ff774c6919': new Set([robinhood.id]),
     '0x8f98a825ac89501afe33299ddb561829a24c0cc4': new Set([ink.id]),
+    '0x91Ab9c4B07f479D48b60AEFE8F7E31B3760C88c1': new Set([elysium.id]),
 
     // DEX Router Addresses for OKX DEX used in signing exactOut transactions
     '0xa875Fb2204cE71679BE054d97f7fAFFeb6536D67': new Set([ethereum.id]),
@@ -168,6 +170,7 @@ const allowlist: Record<Address, Set<number>> = mapKeys(
     '0x78466A1488f1883d71cFddd1c621351572dE0a1C': new Set([pharos.id]),
     '0x56e6983D59bF472Ced0E63966A14d94A3A291589': new Set([hyperEvm.id]),
     '0x42170295F1173c9e5874ea9d00c6d137E1a4f53d': new Set([robinhood.id]),
+    '0xA32f4EC37de04ACcBB6303bC6f8C7056ed1cfefA': new Set([elysium.id]),
 
     // https://web3.binance.com/en/dev-docs/catalog/web3-wallet/api/rest-api/trading-api
     // Router and token approval share one address, deployed at the same address on every chain
